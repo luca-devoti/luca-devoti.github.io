@@ -129,7 +129,6 @@ nav a.active {
     border-radius: 16px;
 }
 
-
 .section-container {
     display: flex;
     align-items: center;
@@ -147,11 +146,46 @@ nav a.active {
     color: #182430;
 }
 
+.image-box {
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    gap: 15px;
+    justify-content: center;
+    align-content: center;
+}
+
 .image-box img {
-    width: 400px;
-    max-width: 100%;
+    width: 80px;   /* reduced from 160px */
+    height: 80px;
+    object-fit: contain;
     border-radius: 12px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.social-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.2s ease; /* add this */
+}
+
+.social-link:hover {
+    text-decoration: underline;
+    transform: scale(1.1); /* scales BOTH text + icon */
+}
+
+.social-link img {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.2s ease;
+}
+
+@media (max-width: 600px) {
+    .image-box {
+        grid-template-columns: repeat(2, 80px);
+    }
 }
 
 @keyframes fadeIn {
